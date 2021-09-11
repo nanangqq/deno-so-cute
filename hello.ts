@@ -6,7 +6,8 @@ addEventListener('fetch', event => {
   const name: name = { name: 'name' }
   // const msg = `${Object.keys(event).join(',')}` // isTrusted 하나 나옴,,
   // const msg = `${event.isTrusted}` // false
-  const msg = `hello ${name.name}, ${Deno.env.get('haha')}`
+  const msg = `hello ${name.name}, ${Deno.env.get('USER')}`
+  // Deno.env -> .env같은 파일 따로 필요 없고, 실행환경 터미널에 설정된 환경변수 바로 사용 가능한 듯
   const response = new Response(msg, {
     headers: { 'content-type': 'text/plain' },
   })
