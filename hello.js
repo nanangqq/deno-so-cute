@@ -1,8 +1,7 @@
-console.log('hi')
 addEventListener('fetch', event => {
-  const response = new Response('Hello Deno!', {
+  const msg = `${event}`
+  const response = new Response(msg, {
     headers: { 'content-type': 'text/plain' },
   })
-  console.log(event)
   event.respondWith(response)
 })
